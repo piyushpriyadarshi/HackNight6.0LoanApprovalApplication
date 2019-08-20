@@ -19,8 +19,8 @@
     <h3 class="center-align">Syndicate Innovation Challenge!</h3>
 </div>
 <div class="row">
-    <div class="col s12 l4 offset-l4">
-        <form action="/login" method="post">
+    <div class="col s12 l6 offset-l3">
+        <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="card panel lighten-3">
                 <div class="card-content">
                     <h4 class="card-title center-align">Login</h4>

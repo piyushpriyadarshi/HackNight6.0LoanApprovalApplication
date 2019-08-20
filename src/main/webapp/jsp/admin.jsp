@@ -14,98 +14,174 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        header, main, footer,.content {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+            header, main, footer,.content {
+                padding-left: 0;
+            }
+        }
+    </style>
 </head>
 <body ng-app="admin" ng-controller="AdminController">
-<nav>
-    <div class="nav-wrapper indigo">
-        <a href="#" class="brand-logo">Book Search Application</a>
-        <a href="#" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Motivational</a></li>
-            <li><a href="#">SelfHelp</a></li>
-            <li><a href="#">Biography</a></li>
-            <li><a href="#">Cart <i class="material-icons right">shopping_cart</i>{{cartList.length}}</a>
-            </li>
-            <li><a class="dropdown-trigger" href="#!" id="deop" data-target="dropdown1">${username}<i
-                    class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
+<nav class="indigo darken-2">
+    <div class="nav wrapper">
+        <div class="container">
+            <a href="" class="brand-logo hide-on-med-and-down" style="padding-left: 200px;">Referal App</a>
+            <a href="" class="brand-logo hide-on-large-only" >Referal App</a>
+            <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out"><i class="material-icons">menu</i></a>
+            <!-- <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i class="material-icons">menu</i></a> -->
+            <ul class="right collection hide-on-small-and-down" style="margin:0px;
+      border: 0px solid transparent">
+
+
+            </ul>
+        </div>
     </div>
 </nav>
-<ul class="sidenav" id="mobile-trigger">
-    <li><a href="#">Sass</a></li>
-    <li><a href="#">Components</a></li>
-    <li><a href="#">JavaScript</a></li>
+<ul class="right collection hide-on-small-and-down" style="margin:0px;
+      border: 0px solid transparent">
+
+
 </ul>
-<ul id="slide-out" class="sidenav">
+</div>
+</div>
+</nav>
+
+<ul id="slide-out" class="sidenav sidenav-fixed">
     <li>
         <div class="user-view">
             <div class="background">
-                <img src="https://materializecss.com/images/office.jpg">
+                <img src="https://materializecss.com/images/office.jpg" alt="" class="responsive-img">
             </div>
-            <a href="#user"><img class="circle" src="https://materializecss.com/images/yuna.jpg"></a>
-            <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            <a href="">
+                <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+            </a>
+            <span class="white-text name">Techievivek</span>
+            <span class="white-text email">Techievivek123@gmail.com</span>
         </div>
     </li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+
     <li>
-        <div class="divider"></div>
+        <a href="" class="waves-effect waves-ripple"><i class="material-icons blue-text">dashboard</i>Dashboard
+        </a>
     </li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+
+    <li>
+        <a class="waves-effect waves-ripple modal-trigger" href="#aboutApp"><i class="waves-effect waves-light material-icons blue-text">description</i>About App
+        </a>
+    </li>
+
+    <div class="divider"></div>
+
+    <li>
+        <a  href="#helpApp" class="modal-trigger waves-effect waves-ripple"><i class="waves-effect waves-light material-icons blue-text">help</i>Help
+        </a>
+    </li>
+    <li>
+        <a href="" class="waves-effect waves-ripple"><i class="material-icons blue-text">exit_to_app</i>Logout
+        </a>
+    </li>
 </ul>
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-</ul>
 
-<h1>Admin Dashboard</h1>
+<div class="content">
+    <div class="row">
+        <div class="col s12 l4 m4">
+            <div class="card-panel center">
+                <h5>Users Online <a href=""> <span><i class="material-icons tiny">open_in_new</i></span></a></h5>
+
+            </div>
+        </div>
+        <div class="col s12 l4 m4">
+            <div class="card-panel center">
+                <h5>Views <a href=""> <span><i class="material-icons tiny">open_in_new</i></span></a></h5>
+
+            </div>
+        </div>
+        <div class="col s12 l4 m4">
+            <div class="card-panel center">
+                <h5>Earning <a href=""> <span><i class="material-icons tiny">open_in_new</i></span></a></h5>
 
 
-<div class="container-fluid">
+            </div>
+        </div>
+
+    </div>
 
     <div class="row">
 
-        <div class="col s12 m12 l4">
+        <div class="col l6 m6 s12">
+            <div class="card-panel center">
+                <table class="highlight centered responsive-table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                    </tr>
+                    </thead>
 
-        </div>
-        <div class="col s12 m12 l4">
-            <div class="card">
-                <button class="btn indigo waves-effect waves-light" ng-click="addProductModel()">Add Product</button>
-                <div class="card-content">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Product Name</th>
-                            <th>Product Description</th>
-                            <th>Commission</th>
-                        </tr>
-                        </thead>
+                    <tbody>
+                    <tr>
+                        <td>Alvin</td>
+                        <td>Eclair</td>
+                        <td>$0.87</td>
+                    </tr>
+                    <tr>
+                        <td>Alan</td>
+                        <td>Jellybean</td>
+                        <td>$3.76</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-                        <tbody>
-                        <tr ng-repeat="product in productlist">
-                            <td>{{ product.id }}</td>
-                            <td>{{ product.productName}}</td>
-                            <td>{{ product.description}}</td>
-                            <td>{{ product.commision}}</td>
-                            <td><button class="btn indigo waves-effect waves-light" ng-click="updateProduct($index)">Update</button></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
-        <div class="col s12 m12 l4">
+
+        <div class="col l6 m6 s12">
+            <div class="card-panel center">
+
+                    <button class="btn indigo waves-effect waves-light" ng-click="addProductModel()">Add Product</button>
+                    <div class="card-content">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Product Description</th>
+                                <th>Commission</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr ng-repeat="product in productlist">
+                                <td>{{ product.id }}</td>
+                                <td>{{ product.productName}}</td>
+                                <td>{{ product.description}}</td>
+                                <td>{{ product.commision}}</td>
+                                <td><button class="btn indigo waves-effect waves-light" ng-click="updateProduct($index)">Update</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+
 
         </div>
     </div>
+
 </div>
 
-{{productlist}}
 
 <%--Modal content--%>
 
@@ -184,6 +260,24 @@
     </div>
 </div>
 
+<div id="aboutApp" class="modal">
+    <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+<div id="helpApp" class="modal">
+    <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
 
 <script>
 
@@ -202,7 +296,7 @@
         $scope.addproduct={};
         $scope.updateProductType=null;
         $http({method : "GET",
-            url : "/getallproducts"}).then(function(response){
+            url : "${pageContext.request.contextPath}/getallproducts"}).then(function(response){
             $scope.productlist=response.data;
             console.log($scope.productlist);
         },function(response){
@@ -228,7 +322,7 @@
             $('#modal1').modal('close');
             // $scope.updateProductType=angular.toJson($scope.updateProductType)
             $http({method : "POST",
-                url : "/updateproduct",data:$scope.updateProductType}).then(function(response){
+                url : "${pageContext.request.contextPath}/updateproduct",data:$scope.updateProductType}).then(function(response){
                 $scope.toast("Updated 1 Product",'green');
             },function(response){
                 $scope.toast("Some Error Occured","red");
@@ -239,7 +333,7 @@
             $('#modal2').modal('close');
             $scope.addproduct=angular.toJson($scope.addproduct)
             $http({method : "POST",
-                url : "/addproduct",data:$scope.addproduct}).then(function(response){
+                url : "${pageContext.request.contextPath}/addproduct",data:$scope.addproduct}).then(function(response){
                 $scope.toast("Added 1 Product",'green');
             },function(response){
                 $scope.toast("Some Error Occured","red");
