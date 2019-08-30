@@ -39,17 +39,16 @@
                                 <label for="password">Password</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12 m12 l12  login-text">
-                                <input type="checkbox" id="remember-me" />
-                                <label for="remember-me">Remember me</label>
-                            </div>
-                        </div>
+<%--                        <div class="row">--%>
+<%--                            <div class="input-field col s12 m12 l12">--%>
+<%--                                <input type="checkbox" id="remember-me" />--%>
+<%--                                <label for="remember-me">Remember me</label>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
                         <div class="row center-align">
-                            <button class="btn waves-effect waves-light indigo" type="submit"
+                            <button class="btn waves-effect waves-light indigo darken-3" type="submit"
                                     style="width:100%;">Login
-                                <i class="material-icons right">send</i>
                             </button>
                         </div>
                         <div class="row">

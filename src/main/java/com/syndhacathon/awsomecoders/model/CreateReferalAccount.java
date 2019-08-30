@@ -6,6 +6,16 @@ public class CreateReferalAccount {
     private String password1;
     private String email;
 
+    public String getReferedBy() {
+        return referedBy;
+    }
+
+    public void setReferedBy(String referedBy) {
+        this.referedBy = referedBy;
+    }
+
+    private String referedBy;
+
     public String getPassword() {
         return password;
     }
@@ -43,10 +53,11 @@ public class CreateReferalAccount {
     @Override
     public String toString() {
         return "CreateReferalAccount{" +
-                "name='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", password1='" + password1 + '\'' +
                 ", email='" + email + '\'' +
+                ", referedBy='" + referedBy + '\'' +
                 '}';
     }
 

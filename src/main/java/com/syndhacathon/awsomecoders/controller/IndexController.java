@@ -21,4 +21,11 @@ public class IndexController {
 
         return mv;
     }
+    @GetMapping("/ang")
+    public ModelAndView ang(){
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("ang");
+
+        return mv;
+    }
 }

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel center z-depth-3">
+
+            <h3>Please Approve the Loan</h3>
+            <div class="card-content">
+                <table class="highlight centered">
+                    <thead>
+                    <tr>
+                        <th>Loan ID</th>
+                        <th>Product Name</th>
+                        <th>Amount</th>
+                        <th>UserId</th>
+                        <th>Action</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="item in loanlist">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.product.productName}}</td>
+                        <td>{{ item.amount}}</td>
+                        <td>{{ item.appUser.email}}</td>
+                        <td><button class="btn indigo waves-effect waves-light" ng-click="approveLoan($index)">Approve</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

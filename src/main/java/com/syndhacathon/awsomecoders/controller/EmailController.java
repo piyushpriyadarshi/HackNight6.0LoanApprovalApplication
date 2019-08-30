@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.mail.internet.MimeMessage;
 import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 @Controller
