@@ -1,33 +1,111 @@
-<div class="row">
-        <div class="col s12 m12 l12">
-            <div class="card-panel center z-depth-3">
-                <div class="card-content">
-                    <table class="highlight centered">
-                        <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>ReferalLink</th>
-                            <th>Copy</th>
-                        </tr>
-                        </thead>
-    
-                        <tbody>
-                        <tr ng-repeat="product in productlist">
-                            <td>{{ product.productName }}</td>
-                            <td>{{ link }}</td>
-                            <td><a href="" class="btn waves-effect waves-light indigo" ng-click="copyText()">
-                                <i class="material-icons prefix">
-                                    file_copy
-                                </i>
-                            </a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate" required />
+            <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate" required />
+            <label for="last_name">Last Name</label>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col s6">
+            <p>Gender</p>
+            <label>
+                <input name="group3" type="radio" checked />
+                <span>Male</span>
+            </label>
+            <label>
+                <input name="group3" type="radio" />
+                <span>Female</span>
+            </label>
+        </div>
+        <div class="input-field col s6">
+            <input id="dependents" type="number" class="validate" required />
+            <label for="dependents">Dependents</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+            <p>Martial Status</p>
+            <label>
+                <input name="group1" type="radio" checked />
+                <span>Single</span>
+            </label>
+            <label>
+                <input name="group1" type="radio" />
+                <span>Married</span>
+            </label>
+        </div>
+
+        <div class="col s6">
+            <p>Employment Type</p>
+            <label>
+                <input name="group2" type="radio" checked />
+                <span>Comapny</span>
+            </label>
+            <label>
+                <input name="group2" type="radio" />
+                <span>SelfEmployed</span>
+            </label>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="loanAmmount" type="number" class="validate" required />
+            <label for="loanAmmount">Loan Amount</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="loanTerm" type="number" class="validate" required />
+            <label for="loanTerm">Loan Term( in Months)</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="applicantIncome" type="number" class="validate" required />
+            <label for="applicantIncome">Applicant income</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="coapplicantIncome" type="number" class="validate" required />
+            <label for="coapplicantIncome">Co Applicant Income</label>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col s6">
+            <p>Highest Qualifications</p>
+            <label>
+                <input name="group4" type="radio" checked />
+                <span>10th</span>
+            </label>
+            <label>
+                <input name="group4" type="radio" />
+                <span>12th</span>
+            </label>
+            <label>
+                <input name="group4" type="radio" />
+                <span>Graduation</span>
+            </label>
+        </div>
+        <div class="col s6">
+            <button id="submit" class="btn indigo" ng-click="submitLoan()">Submit Loan for Processing</button>
+        </div>
+
+    </div>
+
+
+
+
+
 </div>
-    
-    
-    

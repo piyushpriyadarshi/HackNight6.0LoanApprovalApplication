@@ -16,7 +16,7 @@
 
 <body>
 <div class="title">
-    <h3 class="center-align">Syndicate Innovation Challenge!</h3>
+    <h3 class="center-align">HACKnIGHT</h3>
 </div>
 <div class="row">
     <div class="col s12 l6 offset-l3">

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel center z-depth-3">
+            <div class="card-content">
+                <h4>Check Status of Loans</h4>
+                <button class="btn indigo" ng-click="getLoan()">check</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m12 l12">
+        <div class="card-panel center z-depth-3">
+            <div class="card-content">
+                <table class="highlight centered">
+                    <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Loan Amount</th>
+                        <th>Approved</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="loan in LoanList">
+                        <td>{{ loan.email }}</td>
+                        <td>{{ loan.fName }}</td>
+                        <td>{{ loan.lName }}</td>
+                        <td>{{ loan.loanAmount }}</td>
+                        <td>{{ loan.approved }}</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

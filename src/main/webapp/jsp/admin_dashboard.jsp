@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User DashBoard | Syndicate Innovate Challenge</title>
+    <title>Admin DashBoard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 
@@ -42,8 +42,8 @@
 <nav class="indigo darken-2">
     <div class="nav wrapper">
         <div class="container">
-            <a href="" class="brand-logo hide-on-med-and-down" style="padding-left: 200px;">Referal App</a>
-            <a href="" class="brand-logo hide-on-large-only">Referal App</a>
+            <a href="" class="brand-logo hide-on-med-and-down" style="padding-left: 200px;">Lending App</a>
+            <a href="" class="brand-logo hide-on-large-only">User Dashboard</a>
             <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out"><i
                     class="material-icons">menu</i></a>
             <!-- <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i class="material-icons">menu</i></a> -->

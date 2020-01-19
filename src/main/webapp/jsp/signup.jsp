@@ -20,7 +20,7 @@
         <%--        <form ng-submit="submitForm()">--%>
         <div class="card panel lighten-3 z-depth-3">
             <div class="card-content">
-                <h4 class="card-title center-align">Create Agent Account </h4>
+                <h4 class="card-title center-align">Create User Account </h4>
                 <%--                    <form>--%>
                 <div class="row">
                     <div class="input-field col s12">
@@ -83,7 +83,7 @@
             $scope.createAccountForm=angular.toJson($scope.createAccountForm);
             console.log($scope.createAccountForm);
             $http({method : "POST",
-                url : "${pageContext.request.contextPath}/signup",data:$scope.createAccountForm}).then(function(response){
+                url : "${pageContext.request.contextPath}/addUser",data:$scope.createAccountForm}).then(function(response){
                 // console.log(response.data);
                 $scope.toast(response.data.message,'green');
             },function(response){

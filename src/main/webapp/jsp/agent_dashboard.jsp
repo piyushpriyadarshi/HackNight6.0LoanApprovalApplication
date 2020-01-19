@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agent DashBoard | Syndicate Innovate Challenge</title>
+    <title>User DashBoard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 
@@ -42,13 +42,13 @@
 <nav class="indigo darken-2">
     <div class="nav wrapper">
         <div class="container">
-            <a href="" class="brand-logo hide-on-med-and-down" style="padding-left: 200px;">Referal App</a>
-            <a href="" class="brand-logo hide-on-large-only">Referal App</a>
+            <a href="" class="brand-logo hide-on-med-and-down" style="padding-left: 200px;">Lending App</a>
+            <a href="" class="brand-logo hide-on-large-only">User Dashboard</a>
             <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out"><i
                     class="material-icons">menu</i></a>
             <!-- <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i class="material-icons">menu</i></a> -->
             <ul class="right hide-on-small-and-down">
-                <li><a href="#">Agent DashBoard</a></li>
+                <li><a href="#">User DashBoard</a></li>
 
             </ul>
         </div>
@@ -83,8 +83,10 @@
     </li>
     
     <li>
-        <a href="#!refer" class="waves-effect waves-ripple"><i class="material-icons blue-text">dashboard</i>Refer Products
-        </a>
+        <a href="#!refer" class="waves-effect waves-ripple"><i class="material-icons blue-text">dashboard</i>Apply Loan</a>
+    </li>
+    <li>
+        <a href="#!status" class="waves-effect waves-ripple"><i class="material-icons blue-text">dashboard</i>Check Status</a>
     </li>
 
 
@@ -118,6 +120,17 @@
         $(".sidenav").sidenav();
         $('.dropdown-trigger').dropdown();
         $('.modal').modal();
+        $('.tabs').tabs();
+        // $('select').material_select();
+        // $('#btn1').click(function() {
+        //     $('.tabs').tabs('select', 'test-swipe-2');
+        //     console.log('clecked');
+        // });
+        //
+        // $('#btn2').click(function() {
+        //     $('.tabs').tabs('select', 'test-swipe-3');
+        //     console.log('clecked');
+        // });
 
     });
 
@@ -133,6 +146,9 @@
             .when("/refer",{
                 templateUrl: "ag/agent_referal.htm"
             })
+            .when("/status",{
+                templateUrl: "ag/check_status.htm"
+            })
             .when("/analytics",{
                 templateUrl: "ag/agent_analytics.htm"
             });
@@ -145,15 +161,16 @@
         $scope.clicks="${clicks}";
         $scope.credit="${credit}";
         $scope.referal="${referal}";
+        $scope.LoanList=[];
 
-        $scope.productlist=[];
-        $http({method : "GET",
-            url : "${pageContext.request.contextPath}/getallproducts"}).then(function(response){
-            $scope.productlist=response.data;
-            console.log($scope.productlist);
-        },function(response){
-            alert("error");
-        });
+        // $scope.productlist=[];
+        <%--$http({method : "GET",--%>
+        <%--    url : "${pageContext.request.contextPath}/getallproducts"}).then(function(response){--%>
+        <%--    $scope.productlist=response.data;--%>
+        <%--    console.log($scope.productlist);--%>
+        <%--},function(response){--%>
+        <%--    alert("error");--%>
+        <%--});--%>
         $scope.copyText=function(){
             document.execCommand("copy");
             $scope.toast("Copied !!","green");
@@ -165,6 +182,50 @@
             M.toast({
                 html: data,
                 classes: col
+            });
+        }
+        $scope.submitLoan=function(){
+            var submitObj={};
+            submitObj.martialStatus=$("input[name=group1]:checked").next().text();
+            submitObj.gender=$("input[name=group3]:checked").next().text();
+            submitObj.qualification=$("input[name=group4]:checked").next().text();
+            submitObj.emloymentTypes=$("input[name=group2]:checked").next().text();
+            submitObj.fName=$('#first_name').val();
+            submitObj.lName=$('#last_name').val();
+            submitObj.applicantIncome=$('#applicantIncome').val();
+            submitObj.coapplicantIncome=$('#coapplicantIncome').val();
+            submitObj.loanAmount=$('#loanAmmount').val();
+            submitObj.loanTerm=$('#loanTerm').val();
+            submitObj.dependents=$('#dependents').val();
+            submitObj.email= $scope.emailid;
+
+            $http({method : "POST",
+                url : "${pageContext.request.contextPath}/SubmitLoan",
+                data: submitObj
+            }).then(function(response){
+                // please check the status of the loan
+
+                console.log(response);
+            },function(response){
+                alert("error");ss
+            });
+            console.log(submitObj);
+            console.log("submitted");
+        }
+        $scope.getLoan=function(){
+            var loanRequest={};
+            loanRequest.email=$scope.emailid;
+            console.log(loanRequest);
+            $http({method : "POST",
+                url : "${pageContext.request.contextPath}/getLoanByEmail",
+                data: loanRequest
+            }).then(function(response){
+                // please check the status of the loan
+                $scope.LoanList=response.data;
+
+                console.log($scope.LoanList);
+            },function(response){
+                alert("error");ss
             });
         }
     });
