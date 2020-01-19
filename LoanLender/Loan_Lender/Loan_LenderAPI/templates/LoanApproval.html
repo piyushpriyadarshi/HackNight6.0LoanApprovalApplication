@@ -1,0 +1,47 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lender</title>
+</head>
+<body bgcolor='#ceddd7'>
+
+
+<div align="center">
+    
+    <h1>Loan Approval System </h1>
+</div>
+<br>
+<br>
+
+<div align="left">
+<form action="/output/" method="post">
+    {%csrf_token%}
+    <input type="text" size='6' name = "gender" placeholder=""></input>
+    <input type="text" size='6' name = "married" placeholder=""></input>
+    <input type="text" size='6' name = "dependents" placeholder=""></input>
+    <input type="text" size='6' name = "education" placeholder=""></input>
+    <input type="text" size='6' name = "selfemployeed" placeholder=""></input>
+    <input type="text" size='6' name = "applicantincome" placeholder=""></input>
+    <input type="text" size='6' name = "coapplicantincome" placeholder=""></input>
+    <input type="text" size='6' name = "loanamount" placeholder=""></input>
+    <input type="text" size='6' name = "loanamountterm" placeholder=""></input>
+    <input type="text" size='6' name = "credithistory" placeholder=""></input>
+    <input type="text" size='6' name = "propertyarea" placeholder=""></input>
+    <button type="submit">Request</button>
+</form>
+</div>
+
+<div align="right">
+<p><font size="6"> Your Loan is: </font><font size="6">{{data.k0}}</font></p>
+</div>
+
+
+
+
+</body>
+
+
+
+
+</html>
